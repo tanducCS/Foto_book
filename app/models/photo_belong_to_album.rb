@@ -1,0 +1,2 @@
+class PhotoBelongToAlbum < ApplicationRecord
+end

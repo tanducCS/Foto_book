@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  create_day: 2023-06-27 15:30:32
+  sharing_mode: MyString
+  number_photo: 1
+  description: MyString
+  text: MyString
+
+two:
+  title: MyString
+  create_day: 2023-06-27 15:30:32
+  sharing_mode: MyString
+  number_photo: 1
+  description: MyString
+  text: MyString

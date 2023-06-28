@@ -1,0 +1,2 @@
+class PhotoBelongToUser < ApplicationRecord
+end

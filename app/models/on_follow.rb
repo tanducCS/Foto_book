@@ -1,0 +1,2 @@
+class OnFollow < ApplicationRecord
+end
