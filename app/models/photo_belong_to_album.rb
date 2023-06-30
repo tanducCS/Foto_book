@@ -1,2 +1,14 @@
+# == Schema Information
+#
+# Table name: photo_belong_to_albums
+#
+#  id         :bigint           not null, primary key
+#  photo_id   :bigint
+#  album_id   :bigint
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 class PhotoBelongToAlbum < ApplicationRecord
+  belongs_to :photo
+  belongs_to :album
 end

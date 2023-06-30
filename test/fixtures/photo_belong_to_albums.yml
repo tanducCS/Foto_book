@@ -1,4 +1,13 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# == Schema Information
+#
+# Table name: photo_belong_to_albums
+#
+#  id         :bigint           not null, primary key
+#  photo_id   :bigint
+#  album_id   :bigint
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 
 one:
   photo_id: 
