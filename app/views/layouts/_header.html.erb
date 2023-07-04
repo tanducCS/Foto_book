@@ -1,0 +1,43 @@
+<div class="header row  align-items-center sticky-top ">
+
+  <div class="col-2 d-flex justify-content-center ">
+    <%= link_to "Fotobook", root_path, class:"text-light d-none d-md-block text-decoration-none h3" %>
+
+    <%= link_to root_path do%>
+      <i class="fa-brands fa-square-facebook fa-2xl d-md-none" style="color: #ffffff;"></i>
+    <%end%>
+
+
+  </div>
+  <div class="col-4 rounded">
+    <input type="search" placeholder="Search Photo/ Album" class="w-100">
+  </div>
+  <div class="col-2">
+
+  </div>
+  <div class="col-2">
+    <% if user_signed_in? %>
+      <div class="d-flex flex-row align-items-center ">
+        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle me-3" style="width: 15%; min-width: 27px;" alt="Avatar" />
+        <h5 class="text-white d-none d-md-block">Hieu Nguyen</h5>
+      </div>
+    <%end %>
+  </div>
+  <div class="col-2">
+    <% if user_signed_in? %>
+      <%= button_to '<i class="fa-solid fa-right-from-bracket fa-2xl " style="color: #ffffff;"></i>'.html_safe, destroy_user_session_path, method: :delete, class: "d-md-none"%>
+
+
+        <%= button_to "Logout", destroy_user_session_path, method: :delete, class:'d-none d-md-block' %>
+
+
+    <% else %>
+      <%= link_to  new_user_session_path, class:'text-decoration-none' do%>
+        <h5 class="text-light d-none d-md-block">Login</h5>
+      <%end%>
+      <%= link_to new_user_session_path,method: :delete do %>
+        <i class="fa-solid fa-right-to-bracket d-md-none fa-xl" style="color: #ffffff;"></i>
+      <% end %>
+    <% end %>
+  </div>
+</div>

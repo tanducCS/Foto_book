@@ -2,17 +2,21 @@
 #
 # Table name: users
 #
-#  id         :bigint           not null, primary key
-#  first_name :string           not null
-#  last_name  :string           not null
-#  email      :string           not null
-#  gender     :string           not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  last_login :datetime
-#  active     :boolean          default(TRUE), not null
-#  password   :string           not null
-#  admin_id   :bigint
+#  id                     :bigint           not null, primary key
+#  first_name             :string           not null
+#  last_name              :string           not null
+#  email                  :string           not null
+#  gender                 :string           not null
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  last_login             :datetime
+#  active                 :boolean          default(TRUE), not null
+#  password               :string           not null
+#  admin_id               :bigint
+#  encrypted_password     :string           default(""), not null
+#  reset_password_token   :string
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
 #
 
 one:

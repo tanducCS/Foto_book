@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_29_044943) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_03_065902) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,7 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_29_044943) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "photo_belong_to_albums", force: :cascade do |t|
+  create_table "photo_albums", force: :cascade do |t|
     t.bigint "photo_id"
     t.bigint "album_id"
     t.datetime "created_at", null: false
@@ -53,19 +53,24 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_29_044943) do
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "email", null: false
-    t.string "gender", null: false
+    t.string "gender", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "last_login", precision: nil
     t.boolean "active", default: true, null: false
-    t.string "password", null: false
-    t.bigint "admin_id"
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.boolean "is_admin", default: false, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "albums", "users"
   add_foreign_key "on_follows", "users", column: "followee_id"
   add_foreign_key "on_follows", "users", column: "follower_id"
-  add_foreign_key "photo_belong_to_albums", "albums"
-  add_foreign_key "photo_belong_to_albums", "photos"
-  add_foreign_key "users", "users", column: "admin_id"
+  add_foreign_key "photo_albums", "albums"
+  add_foreign_key "photo_albums", "photos"
+  add_foreign_key "photos", "users"
 end

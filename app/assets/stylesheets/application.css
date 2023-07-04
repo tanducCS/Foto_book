@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+@import "components/feed.css";
+
+.header{
+    background-color: #3c5a9a;
+}
